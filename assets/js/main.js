@@ -242,7 +242,6 @@
       clickable: true
     }
   });
-
   /**
    * Testimonials slider
    */
