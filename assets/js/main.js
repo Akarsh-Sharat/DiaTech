@@ -333,5 +333,14 @@ window.onclick = function(event) {
   }
 }
 
+// ----------------- course registration -----------------------------
+var registerButton = document.getElementById("course-reg-button");
+var registerForm = document.getElementById("course-registration");
+
+registerButton.onclick = function () {
+  registerForm.style.display = "block";
+}
+
+
 
 })();

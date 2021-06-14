@@ -7,6 +7,10 @@
   scroll-behavior: smooth;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -31,6 +35,17 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -487,6 +502,7 @@ button:hover {
   overflow: auto; /* Enable scroll if needed */
   background-color: #3f4896;
   padding-top: 5px;
+  border-radius: 10px;
 }
 
 /* Modal Content/Box */
@@ -1115,6 +1131,10 @@ Star Rateing
   overflow: hidden;
   transition: 0.3s;
 }
+::-webkit-scrollbar{
+  width: 0;
+  background-color: transparent;
+}
 
 .pricing .box:hover {
   transform: scale(1.1);
@@ -1201,6 +1221,101 @@ Star Rateing
   color: #fff;
 }
 
+/*--------------------------------------------------------------
+# Course Registeration
+--------------------------------------------------------------*/
+.course-register{
+  width: 90%;
+  height: 400px;
+  margin: 100px auto 50px;
+  border: solid #333 1px;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  position: relative;
+  display: none;
+}
+
+.course-register > h2{
+  padding: 10px;
+  width: 350px;
+  position: relative;
+  top: -25%;
+  margin: auto;
+}
+
+.reg-form{
+  width: 50%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.reg-form-element{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  border-bottom: #333 solid 1px;
+}
+
+.reg-input{
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  padding-top: 20px;
+  border: none;
+  position: relative;
+}
+
+.reg-label{
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  padding: 10px 10px;
+}
+
+.reg-label::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  top: -2px;
+  left: 0;
+  transform: translate(-100%);
+  transition: ease 0.5s all;
+}
+
+.reg-content{
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.reg-form input:focus + .reg-label .reg-content, 
+.reg-form input:valid + .reg-label .reg-content{
+  transform: translateY(-100%);
+  font-size: 0.9em;
+}
+
+.reg-form input:focus + .reg-label::after,
+.reg-form input:valid + .reg-label::after{
+  transform: translateX(0%);
+}
+
+
+@media screen and (max-width: 576px){
+  .course-register > h2{
+    font-size: 1.2em;
+  }
+
+  .reg-form{
+    width: 100%;
+  }
+}
 
 /*--------------------------------------------------------------
 # F.A.Q
